@@ -1,4 +1,4 @@
-import { buildBattleEndDate, tournaments, tournamentStartDelayMinutes } from "./config.js";
+import {tournaments, tournamentStartDelayMinutes } from "./config.js";
 
 const time = 60000; // Variable of 60 * 1000
 
@@ -119,39 +119,17 @@ function UpdateBoothCountdown() {
   }
 }
 
-// Updates the Minecraft timer 
-function UpdateMCCountdown() {
-  const mcCountdown = document.getElementById('mc-countdown'); // Get the countdown element
-  const currentTime = new Date(); // Get the current time
-  const endDate = new Date(buildBattleEndDate); // Get the build battle end date from the config file 
 
-  const timeDifference = endDate - currentTime; // Find the difference in time between the end date and the current time
-
-  // Calculate the days, hours, minutes and seconds with the time difference
-  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(timeDifference % (time * 60 * 24) / (time * 60));
-  const minutes = Math.floor((timeDifference % (time * 60)) / time);
-  const seconds = Math.floor((timeDifference % time) / 1000);
-
-  // Format the days, hours, minutes and seconds with padStart
-  // If the days is 2 the formatted string will be 02
-  const formattedDays = String(days).padStart(2, '0');
-  const formattedHours = String(hours).padStart(2, '0');
-  const formattedMinutes = String(minutes).padStart(2, '0');
-  const formattedSeconds = String(seconds).padStart(2, '0');
-
-  mcCountdown.innerText = `${formattedDays}:${formattedHours}:${formattedMinutes}:${formattedSeconds}`; // Format everything into one string and display it
-}
 
 // Initialize every function when the website is first opened
 UpdateTournamentCountdowns();
 UpdateBoothCountdown();
-UpdateMCCountdown();
+
 
 // Run an interval every second that runs all the functions
 setInterval(() => {
   UpdateTournamentCountdowns();
   UpdateBoothCountdown();
-  UpdateMCCountdown();
+
 }, 1000);
 

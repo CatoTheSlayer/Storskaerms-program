@@ -10,106 +10,95 @@
 
 */
 
-const buildBattleEndDate = "September 29, 2024 11:00";
 
-const tournamentStartDelayMinutes = 1; // Hvor mange minutter "Starter NU!" skal stå når turneringen når 0 i countdownen
+const tournamentStartDelayMinutes = 5; // Hvor mange minutter "Starter NU!" skal stå når turneringen når 0 i countdownen
 
 const tournaments = [
   {
-    name: "Minecraft Build Battle",
-    imagePath: "./assets/images/Minecraft.png",
-    date: "January 17, 2025 18:00",
-  },
-  {
-    name: "Sten, Saks og Papir",
+    name: "Sten, Saks\nog Papir",
     imagePath: "./assets/images/StenSaksPapir.png",
-    date: "January 17, 2025 18:15",
+    date: "January 18, 2026 18:15",
   },
   {
-    name: "Overwatch 2 - 3v3",
-    imagePath: "./assets/images/Overwatch.png",
-    date: "January 17, 2025 19:30",
-  },
-  {
-    name: "Rainbow Six Siege - 5v5",
-    imagePath: "./assets/images/RainbowSixSiege.png",
-    date: "January 17, 2025 20:00",
-  },
-  {
-    name: "Lethal Company",
-    imagePath: "./assets/images/LethalCompany.png",
-    date: "January 17, 2025 22:00",
-  },
-  {
-    name: "UNO",
-    imagePath: "./assets/images/UNO.png",
-    date: "January 17, 2025 11:00",
-  },
-  {
-    name: "Rocket League - 2v2",
+    name: "Rocket League\n2v2",
     imagePath: "./assets/images/RocketLeague.png",
-    date: "January 17, 2025 12:00",
+    date: "January 18, 2026 19:30",
   },
   {
-    name: "TFT",
-    imagePath: "./assets/images/TFT.png",
-    date: "January 17, 2025 13:00",
-  },
-  {
-    name: "League of Legends - 2v2",
+    name: "League of Legends\n2v2",
     imagePath: "./assets/images/LeagueOfLegends.png",
-    date: "January 17, 2025 14:00",
+    date: "January 18, 2026 21:00",
   },
   {
-    name: "Smash Bros [Ingen præmie]",
-    imagePath: "./assets/images/SmashBros.png",
-    date: "January 17, 2025 14:45",
+    name: "Counter Strike 2\n2v2",
+    imagePath: "./assets/images/MorgenMad.png",
+    date: "January 18, 2026 22:30",
   },
   {
-    name: "Geoguessr",
-    imagePath: "./assets/images/Geoguessr.png",
-    date: "January 18, 2025 15:00",
-  },
-  {
-    name: "Counter Strike 2 - 5v5",
+    name: "Morgenmad\n\n",
     imagePath: "./assets/images/CSGO.png",
-    date: "January 18, 2025 16:30",
+    date: "January 19, 2026 10:00",
   },
   {
-    name: "Werewolf [Ingen præmie]",
-    imagePath: "./assets/images/Geoguessr.png", // Mangler billede
-    date: "January 18, 2025 17:30",
+    name: "Marvel Rivals TDM\n3v3",
+    imagePath: "./assets/images/MarvelRivals.png",
+    date: "January 19, 2026 11:00",
   },
   {
-    name: "Magic: The Gathering [Ingen præmie]",
-    imagePath: "./assets/images/Magic.png",
-    date: "January 18, 2025 20:00",
+    name: "UNO\n\n",
+    imagePath: "./assets/images/UNO.png",
+    date: "January 19, 2026 12:30",
   },
   {
-    name: "League of Legends - 5v5",
-    imagePath: "./assets/images/LeagueOfLegends.png",
-    date: "January 18, 2025 20:00",
+    name: "Team Fight\nTactics",
+    imagePath: "./assets/images/TFT.png",
+    date: "January 19, 2026 13:15",
   },
   {
-    name: "Overwatch 2 - 5v5",
-    imagePath: "./assets/images/Overwatch.png",
-    date: "January 18, 2025 22:00",
-  },
-  {
-    name: "Mario Kart",
-    imagePath: "./assets/images/MarioKart.png",
-    date: "January 18, 2025 23:00",
-  },
-  {
-    name: "Valorant - 2v2",
+    name: "Valorant\n2v2",
     imagePath: "./assets/images/Valorant.png",
-    date: "January 19, 2025 11:00",
+    date: "January 19, 2026 14:30",
   },
   {
-    name: "Minecraft Build Battle Slut",
-    imagePath: "./assets/images/Minecraft.png",
-    date: "January 19, 2025 11:00",
+    name: "Super Smash Bros.\nUltimate",
+    imagePath: "./assets/images/SmashBros.png",
+    date: "January 19, 2026 15:45",
+  },
+  {
+    name: "Skak\n\n",
+    imagePath: "./assets/images/Skak.png", 
+    date: "January 19, 2026 17:00",
+  },
+  {
+    name: "League of Legends\n5v5",
+    imagePath: "./assets/images/LeagueOfLegends.png",
+    date: "January 19, 2026 18:00",
+  },
+  {
+    name: "Aftensmad\n\n",
+    imagePath: "./assets/images/Aftensmad.png",
+    date: "January 19, 2026 20:00",
+  },
+  {
+    name: "Mario Kart 8\n Deluxe",
+    imagePath: "./assets/images/MarioKart.png",
+    date: "January 19, 2026 21:00",
+  },
+  {
+    name: "Geoguesser\n\n",
+    imagePath: "./assets/images/Geoguessr.png",
+    date: "January 19, 2026 22:00",
+  },
+  {
+    name: "Werewolf\n[Ingen præmie]",
+    imagePath: "./assets/images/WereWolf.png", 
+    date: "January 19, 2026 23:00",
+  },
+  {
+    name: "Morgenmad\n\n",
+    imagePath: "./assets/images/CSGO.png",
+    date: "January 20, 2026 10:00",
   },
 ];
 
-export { tournaments, tournamentStartDelayMinutes, buildBattleEndDate };
+export { tournaments, tournamentStartDelayMinutes};
