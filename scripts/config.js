@@ -40,8 +40,8 @@ const tournaments = [
     date: "January 19, 2026 10:00",
   },
   {
-    name: "Marvel Rivals TDM\n3v3",
-    imagePath: "./assets/images/MarvelRivals.png",
+    name: "Ovwérwatch\n3v3",
+    imagePath: "./assets/images/Overwatch.png",
     date: "January 19, 2026 11:00",
   },
   {
